@@ -52,15 +52,52 @@ Y0=s1′s0′I <br>
 
 
 ## Program:
+### MULTIPLEXER
+```
+module ex6a(I0,I1,I2,I3,s1,s0,y);
+input I0,I1,I2,I3,s0,s1;
+output y;
+wire p,q,r,s,s1d,s0d;
+not(s1d,s1);
+not(s0d,s0);
+and(p,s1d,s0d,I0);
+and(q,s1d,s0,I1);
+and(r,s1,s0d,I2);
+and(s,s1,s0,I3);
+or(y,p,q,r,s);
+endmodule 
+```
 
+### DEMULTIPLEXER
+```
+module ex6a(I0,I1,I2,I3,s1,s0,y);
+input I0,I1,I2,I3,s0,s1;
+output y;
+wire p,q,r,s,s1d,s0d;
+not(s1d,s1);
+not(s0d,s0);
+and(p,s1d,s0d,I0);
+and(q,s1d,s0,I1);
+and(r,s1,s0d,I2);
+and(s,s1,s0,I3);
+or(y,p,q,r,s);
+endmodule 
+```
 
 ## RTL Schematic:
+### MULTIPLEXER
+![Screenshot (196)](https://github.com/Saravana-kumar369/Mux-Demux/assets/117925254/3a8cc48d-2c66-4981-bb7f-4b01f6c276bc)
 
-
+### DEMULTIPLEXER
+![Screenshot (198)](https://github.com/Saravana-kumar369/Mux-Demux/assets/117925254/18946e23-d717-4760-a860-8aecb8a224dd)
 
 
 ## Timing Diagram:
+### MULTIPLEXER
+![Screenshot (197)](https://github.com/Saravana-kumar369/Mux-Demux/assets/117925254/d5c7365f-f656-453a-ae94-84deaa689590)
 
+### DEMULTIPLEXER
+![Screenshot (199)](https://github.com/Saravana-kumar369/Mux-Demux/assets/117925254/a4ea6c15-6471-4021-998f-64b305233abb)
 
 
 ## Result:
